@@ -1,0 +1,22 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  button, input {
+    border: none;
+    background-color: transparent;
+  }
+  
+  button, input[type="button"], input[type="submit"] {
+    cursor: pointer;
+  }
+  
+  ul, ol {
+    list-style: none;
+  }
