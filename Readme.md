@@ -1,4 +1,13 @@
-## Init Setting
+<h1 align="center">Boiler Plate 😄</h1>
 
-- 초기 세팅을 가져다 쓸 수 있게 계속해서 업그레이드할 것  
-- Boiler Plate
+## 내용
+
+> 웹팩 기본 설정  
+> SPA  
+> Eslint, Prittier  
+> It is Full-Stack Boiler Plate
+
+## Author
+👤 **문지호** 
+---
+
