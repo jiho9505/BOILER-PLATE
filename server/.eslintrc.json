@@ -1,3 +1,6 @@
+/**
+    서버의 eslint는 다른 옵션을 가질 확률이 꽤 있다.
+*/
 {
     "plugins": ["prettier"],
     "extends": ["eslint:recommended", "plugin:prettier/recommended"],

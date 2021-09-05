@@ -1,6 +1,6 @@
 import './reset.css';
 import './index.css';
-import { router, navigateTo } from './router.js';
+import { router, navigateTo } from './core/router';
 
 window.addEventListener('popstate', router);
 
