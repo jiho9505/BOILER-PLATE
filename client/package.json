@@ -4,7 +4,6 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "webpack -w",
     "start": "webpack serve --config ./config/webpack.config.dev.js --progress",
     "build:dev": "webpack --config ./config/webpack.config.dev.js",
     "build:prod": "webpack --config ./config/webpack.config.prod.js"
@@ -34,7 +33,6 @@
   },
   "dependencies": {
     "@babel/polyfill": "^7.12.1",
-    "core-js": "^3.15.2",
-    "image-minimizer-webpack-plugin": "^2.2.0"
+    "core-js": "^3.15.2"
   }
 }
