@@ -11,4 +11,12 @@ module.exports = merge(commonWebpack, {
     open: true,
     historyApiFallback: true,
   },
+  module: {
+    rules: [
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader']
+      }
+    ]
+  }
 });
