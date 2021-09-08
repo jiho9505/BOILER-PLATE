@@ -1,0 +1,34 @@
+{
+    "presets": [
+        [
+            "@babel/preset-env",
+            {
+             "targets" : "> 0.25%, not dead",
+             "useBuiltIns" : "usage",
+             "corejs" : {"version": 3, "proposals": true }
+            }
+          
+        ], "@babel/preset-typescript" , "@babel/preset-react"
+    ],
+    "plugins": [
+       "@babel/plugin-proposal-class-properties"
+    ]
+}
+  /**
+  @babel/plugin-proposal-class-properties : 클래스 상속시 field가 undefined 나는 에러 잡기위한 플러그인
+  options: {
+              presets: [ '@babel/preset-react', '@babel/preset-typescript'],
+              plugins: ['@emotion', '@babel/plugin-transform-runtime', 'transform-remove-console'],
+            },
+    react , ts , emotion을 쓰기 위해 참고하세요.
+  */
+  /**
+    아래와 같이 환경버전에 맞게 targets 설정도 가능하다.
+    이상한 점은 > 1%, not dead일때 트랜스파일링이 안된다는 것...
+    "targets": {
+    "chrome": "58",
+    "ie": "11"
+    }
+  */
+
+  
