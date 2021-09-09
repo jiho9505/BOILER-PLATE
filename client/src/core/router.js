@@ -1,43 +1,40 @@
 import MainPage from '../pages/index';
 
-const pathToRegex = (path) =>
-	new RegExp('^' + path.replace(/\//g, '\\/').replace(/:\w+/g, '(.+)') + '$');
+const pathToRegex = (path) => new RegExp('^' + path.replace(/\//g, '\\/').replace(/:\w+/g, '(.+)') + '$');
 
 const navigateTo = (url, props = null) => {
-	history.pushState(props, null, url);
-	router();
+  history.pushState(props, null, url);
+  router();
 };
 
 const router = () => {
-	const routes = [
-		{ path: '/', view: MainPage },
-		// { path: '/detail', view: DetailPage },
-		// { path: '/detail/:id', view: DetailPage },
-		// { path: '/:notfound', view: NotFound },
-	];
+  const routes = [
+    { path: '/', view: MainPage },
+    // { path: '/detail', view: DetailPage },
+    // { path: '/detail/:id', view: DetailPage },
+    // { path: '/:notfound', view: NotFound },
+  ];
 
-	const potentialMatches = routes.map((route) => {
-		return {
-			route: route,
-			result: location.pathname.match(pathToRegex(route.path)),
-		};
-	});
+  const potentialMatches = routes.map((route) => {
+    return {
+      route: route,
+      result: location.pathname.match(pathToRegex(route.path)),
+    };
+  });
 
-	let match = potentialMatches.find(
-		(potentialMatch) => potentialMatch.result !== null
-	);
+  let match = potentialMatches.find((potentialMatch) => potentialMatch.result !== null);
 
-	if (!match) {
-		match = {
-			route: routes[0],
-			result: [location.pathname],
-		};
-	}
+  if (!match) {
+    match = {
+      route: routes[routes.length - 1],
+      result: [location.pathname],
+    };
+  }
 
-	const $app = document.querySelector('.app');
-	$app.scrollTop = 0;
-	$app.innerHTML = '';
-	new match.route.view($app);
+  const $app = document.querySelector('.app');
+  $app.scrollTop = 0;
+  $app.innerHTML = '';
+  new match.route.view($app);
 };
 
 export { router, navigateTo };
