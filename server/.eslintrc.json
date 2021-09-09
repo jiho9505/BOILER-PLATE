@@ -1,20 +1,24 @@
 /**
-    서버의 eslint는 다른 옵션을 가질 확률이 꽤 있다.
+    서버의 eslint는 서버에 맞게 설정해야합니다..
 */
 {
-    "plugins": ["prettier"],
-    "extends": ["eslint:recommended", "plugin:prettier/recommended"],
-    "parserOptions": {
-        "ecmaVersion": 12,
-        "sourceType": "module"
-    },
-    "env": {
-        "browser": true,
-        "node": true,
-        "es2021": true
-    },
-    "ignorePatterns": ["node_modules/", "dist/", "webpack.config.js"],
-    "rules": {
-        "prettier/prettier": "error"
-    }
+  "plugins": ["prettier"],
+  "extends": ["eslint:recommended", "plugin:prettier/recommended"],
+  "parserOptions": {
+    "ecmaVersion": 12,
+    "sourceType": "module"
+  },
+  "env": {
+    "node": true,
+    "es2021": true
+  },
+  "ignorePatterns": ["node_modules/"],
+  "rules": {
+    "prettier/prettier": [
+      "error",
+      {
+        "endOfLine": "auto"
+      }
+    ]
+  }
 }
