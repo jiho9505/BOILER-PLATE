@@ -1,3 +1,4 @@
+// TS 나 React 사용시 그것에 맞게 설정해야한다.
 {
   "plugins": ["prettier"],
   "extends": ["eslint:recommended", "plugin:prettier/recommended"],
