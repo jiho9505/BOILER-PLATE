@@ -1,9 +1,8 @@
-{
-    "trailingComma": "es5",
-    "tabWidth": 4,
-    "semi": true,
-    "singleQuote": true,
-    "bracketSpacing": true,
-    "useTabs": true,
-    "arrowParens": "always"
-}
+module.exports = {
+  semi: true,
+  tabWidth: 2,
+  printWidth: 120,
+  bracketSpacing: true,
+  arrowParens: 'always',
+  singleQuote: true,
+};
