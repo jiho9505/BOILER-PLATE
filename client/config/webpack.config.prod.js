@@ -1,8 +1,10 @@
 const { merge } = require('webpack-merge');
 const commonWebpack = require('./webpack.config.common');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const TerserWebpackPlugin = require('terser-webpack-plugin');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 /**
  * ImageMinimizerPlugin : 빌드 시 이미지 최적화 용도
@@ -20,10 +22,15 @@ module.exports = merge(commonWebpack, {
     ]
   },
   plugins: [
-    new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
       filename: '[name].css'
     }),
+    new BundleAnalyzerPlugin({
+      analyzerMode : 'disabled',
+      openAnalyzer : false,
+      generateStatsFile : true
+    }),
+    new CleanWebpackPlugin(),
     new ImageMinimizerPlugin({
       exclude: /node_modules/,
       minimizerOptions: {
@@ -37,7 +44,7 @@ module.exports = merge(commonWebpack, {
   ],
   optimization: {
     minimizer: [
-      new TerserPlugin({
+      new TerserWebpackPlugin({
         terserOptions: {
            compress: {
                drop_console: true
