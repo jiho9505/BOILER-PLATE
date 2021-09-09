@@ -1,13 +1,15 @@
 <h1 align="center">Boiler Plate 😄</h1>
 
-## 내용
+It is Full-Stack Boiler Plate
 
-> 웹팩 기본 설정  
-> SPA  
-> Eslint, Prittier  
-> It is Full-Stack Boiler Plate
+### `내용`
 
-## Author
+- 웹팩,바벨 기본 설정  
+- SPA  
+- Eslint, Prittier
+- 폴더구조
+
+### `Author`
 👤 **문지호** 
 ---
 
