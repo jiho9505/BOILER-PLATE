@@ -1,12 +1,12 @@
-const path = require("path");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  entry: "./src/index.js",
+  entry: './src/index.js',
   output: {
-    path: path.resolve(__dirname, "../build"),
-    filename: "bundle.js",
-  }, 
+    path: path.resolve(__dirname, '../build'),
+    filename: '[name].js',
+  },
   resolve: {
     extensions: ['.js'],
     alias: {
@@ -17,17 +17,17 @@ module.exports = {
     rules: [
       {
         test: /\.js$/,
-        use: "babel-loader",
+        use: 'babel-loader',
         exclude: /node_modules/,
       },
       {
         test: /\.(png|jpe?g|gif|svg|ico)$/,
         use: [
           {
-            loader: "file-loader",
+            loader: 'file-loader',
             options: {
-              publicPath: "/",
-              name: "[name].[ext]?[hash]",
+              publicPath: '/',
+              name: '[name].[ext]?[hash]',
             },
           },
         ],
@@ -35,10 +35,10 @@ module.exports = {
       {
         test: /\.(png|jpe?g|gif|svg|ico)$/,
         use: {
-          loader: "url-loader",
+          loader: 'url-loader',
           options: {
-            publicPath: "/",
-            name: "[name].[ext]?[hash]",
+            publicPath: '/',
+            name: '[name].[ext]?[hash]',
             limit: 5000,
           },
         },
@@ -47,11 +47,10 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: "./src/index.html", 
-    })
-  ]
+      template: './src/index.html',
+    }),
+  ],
 };
-
 
 /*
   scss laoder   
